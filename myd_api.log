@@ -2130,3 +2130,9 @@ Caused by: java.sql.SQLException: Parameter index out of range (1 > number of pa
 	at com.jfinal.plugin.activerecord.DbPro.find(DbPro.java:324)
 	at com.jfinal.plugin.activerecord.DbPro.find(DbPro.java:339)
 	... 45 more
+
+2020-06-29 14:11:09
+[WARN]-[Thread: XNIO-1 task-6]-[com.jfinal.core.ActionHandler.handle()]: 404 Action Not Found: /tai/undefinedDetail?id=10%E4%B8%87+
+
+2020-06-29 15:08:41
+[WARN]-[Thread: XNIO-1 task-12]-[com.jfinal.core.ActionHandler.handle()]: 404 Action Not Found: /tai/undefinedDetail?id=10%E4%B8%87+

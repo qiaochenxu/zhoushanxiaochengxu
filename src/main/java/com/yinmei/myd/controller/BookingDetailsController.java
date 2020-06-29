@@ -23,9 +23,19 @@ public class BookingDetailsController extends Controller {
 //        Page<Record> paginate = Db.paginate(pageNumber, pageSize, "select number,create_time,visiting_time,attendance,status,operation", " from v9_s_gerenyuyue;");
 //        set("paginate",paginate);
         //status 预约状态 2-成功 4-失败 6-过期 8-取消
-        String id = getPara("id","");
-        List<Record> list = Db.find("select s.number,s.create_time,s.status,s.operation from v9_s_gerenyuyue s,v9_s_user u WHERE s.user_id=u.id AND u.id='"+id+"';");
+        String mobile = getPara("mobile","");
+        List<Record> list = Db.find("select s.number,s.create_time,s.status from v9_s_gerenyuyue s,v9_s_user u WHERE s.user_id=u.id AND u.mobile='"+mobile+"';");
         set("list",list);
+        renderJson();
+    }
+
+    /**
+     * 取消预约
+     */
+    public void cancel(){
+        String id = getPara("id","");
+        int update = Db.update("update v9_s_gerenyuyue set status='8' where id=?", id);
+        set("update",update);
         renderJson();
     }
 }
