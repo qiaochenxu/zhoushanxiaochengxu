@@ -2,6 +2,7 @@ package com.yinmei.myd.common.routes;
 
 import com.jfinal.config.Routes;
 import com.yinmei.myd.controller.BookingDetailsController;
+import com.yinmei.myd.controller.ChairController;
 import com.yinmei.myd.controller.DetailController;
 import com.yinmei.myd.controller.ExhibitionController;
 
@@ -14,6 +15,8 @@ public class AdminRoutes extends Routes {
         this.add("det", BookingDetailsController.class);
         //详情页
         this.add("tai", DetailController.class);
+        //活动讲座
+        this.add("cha", ChairController.class);
 
     }
 }
