@@ -35,8 +35,8 @@ public class ExhibitionController extends Controller {
         int pageNumber=getParaToInt(1,1);
         //每页显示数目，默认每页10条
         int pageSize = getParaToInt(2,10);
-        Page<Record> into = Db.paginate(pageNumber,pageSize,"select id,title,thumb,description,FROM_UNIXTIME(inputtime) exhibitionTime"," from v9_linshizhanlan WHERE status='99' ORDER BY exhibitionTime desc");
-        set("into",into);
+        Page<Record> paginate = Db.paginate(pageNumber,pageSize,"select l.id,l.title,l.thumb,d.zhengwen,FROM_UNIXTIME(l.inputtime) exhibitionTime"," from v9_linshizhanlan l,v9_linshizhanlan_data d WHERE l.id=d.id and status='99' ORDER BY exhibitionTime desc");
+        set("paginate",paginate);
         renderJson();
     }
 

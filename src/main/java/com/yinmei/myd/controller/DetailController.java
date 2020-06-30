@@ -43,5 +43,24 @@ public class DetailController extends Controller {
         renderJson();
 
     }
+    /**
+     * 文博讲座详情页
+     */
+    public void  chairDetail(){
+        String id = getPara("id","");
+        List<Record> list = Db.find("select w.title,w.thumb,d.zhengwen,d.edit,FROM_UNIXTIME(w.inputtime) releaseTime,d.address,d.tel from v9_wenbojiangzuo w,v9_wenbojiangzuo_data d where w.id=d.id and status='99' and w.id=?", id);
+        set("list",list);
+        renderJson();
+    }
+    /**
+     * 活动预告详情页
+     */
+    public void activityDetail(){
+        String id = getPara("id","");
+        List<Record> list = Db.find("select h.title,h.thumb,d.zhengwen,FROM_UNIXTIME(h.inputtime) releaseTime,d.enddate,d.address,d.tel from v9_huodongyugao h,v9_huodongyugao_data d where h.id=d.id and status='99' and h.id=?", id);
+        set("list",list);
+        renderJson();
+
+    }
 
 }

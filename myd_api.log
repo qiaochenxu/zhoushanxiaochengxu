@@ -3082,3 +3082,9 @@ Caused by: com.alibaba.druid.sql.parser.ParserException: syntax error, error in 
 	at com.alibaba.druid.wall.WallProvider.check(WallProvider.java:574)
 	at com.alibaba.druid.wall.WallFilter.check(WallFilter.java:712)
 	... 56 more
+
+2020-06-30 09:16:41
+[WARN]-[Thread: XNIO-1 task-29]-[com.jfinal.core.ActionHandler.handle()]: 404 Action Not Found: /cha/foreshow
+
+2020-06-30 10:19:12
+[WARN]-[Thread: XNIO-1 task-26]-[com.jfinal.core.ActionHandler.handle()]: 404 Action Not Found: /activity/chair/
