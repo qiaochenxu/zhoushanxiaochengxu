@@ -11,6 +11,9 @@ import com.yinmei.myd.common.interceptor.CrossDomainInterceptor;
  */
 @Before(CrossDomainInterceptor.class)
 public class VoiceController extends Controller {
+    /**
+     * 语音导览接口,参数传递页码
+     */
     public void voice(){
         String page = getPara("page","");
 //        String limit = getPara("limit","");
