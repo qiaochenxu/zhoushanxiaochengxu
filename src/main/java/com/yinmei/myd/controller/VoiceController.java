@@ -18,8 +18,4 @@ public class VoiceController extends Controller {
         String res = HttpRequest.post(domain).timeout(20000).execute().body();
         renderJson(res);
     }
-
-    public void aaa(){
-
-    }
 }
